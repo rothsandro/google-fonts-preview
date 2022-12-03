@@ -1,8 +1,11 @@
 # Google Font Previews
 
-This repository generates preview images for [Google Fonts](https://fonts.google.com).
+A script to generate preview images for [Google Fonts](https://fonts.google.com).
 
-## Usage
+The generated preview images are available for download in the [Release section](https://github.com/rothsandro/google-fonts-preview/releases).
+Or follow the instructions below to generate the preview images yourself.
+
+## Generate images
 
 Clone this repository and run the following commands:
 
@@ -17,15 +20,15 @@ npm run generate
 This will fetch all fonts and generate preview images for all of them. This will take a while (~25min on my machine).
 The images will be saved in the `/output/previews` directory.
 
-## Requirements
+### Requirements
 
 You need to have [Node.js](https://nodejs.org) v16 or newer installed.
 
-## Configuration
+### Configuration
 
 You can customize the previews by editing the `config.json` file:
 
-```json
+```json5
 {
   // Text of the preview images.
   // If empty, the font name will be used.
