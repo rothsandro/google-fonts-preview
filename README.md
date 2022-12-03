@@ -14,7 +14,7 @@ npm install
 npm run generate
 ```
 
-This will fetch all fonts and generate preview images for all of them. This will take a while (~20min on my machine).
+This will fetch all fonts and generate preview images for all of them. This will take a while (~25min on my machine).
 The images will be saved in the `/output/previews` directory.
 
 ## Requirements
@@ -52,8 +52,7 @@ You can customize the previews by editing the `config.json` file:
 
 ## Limitations
 
-- Only sans-serif, serif, display, handwriting and monospace fonts are included. Icon fonts are excluded.
-- Fonts with large glyphsets such as the Japanese language are excluded, e.g. [Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+Only sans-serif, serif, display, handwriting and monospace fonts are included. Icon fonts are excluded.
 
 ## Credits
 

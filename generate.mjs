@@ -32,17 +32,22 @@ fs.mkdirSync(outputDir);
 fs.mkdirSync(previewDir);
 
 echo`Collect fonts list...`;
-const fontsMetadata = Object.values(APIv2).filter(
-  (font) => categories.has(font.category) && !!font.unicodeRange.latin
+const fontsMetadata = Object.values(APIv2).filter((font) =>
+  categories.has(font.category)
 );
 
 const fontsList = fontsMetadata.flatMap((f) => {
   const weight =
     f.weights.find((w) => w === 400 || w === "400") || f.weights[0];
   const style = f.styles.find((s) => s === "normal") || f.styles[0];
-  const subset = f.subsets.find((s) => s === "latin") || f.subsets[0];
-  const downloadUrl = f.variants[weight][style][subset].url.woff2;
-  const filePath = `${tmpFontsDir}/${f.id}-${subset}-${weight}-${style}.woff2`;
+  let subset = f.subsets.find((s) => s === "latin") || f.subsets[0];
+
+  if (f.unicodeRange && !f.unicodeRange[subset]) {
+    subset = Object.keys(f.unicodeRange)[0];
+  }
+
+  const downloadUrl = f.variants[weight][style][subset].url.woff;
+  const filePath = `${tmpFontsDir}/${f.id}-${subset}-${weight}-${style}.woff`;
 
   return { id: f.id, name: f.family, filePath, downloadUrl };
 });
@@ -83,7 +88,7 @@ await nodeHtmlToImage({
        <style>
          @font-face {
            font-family: {{fontId}};
-           src: url("{{{fontData}}}") format('woff2');
+           src: url("{{{fontData}}}") format('woff');
          }
 
          #preview {
