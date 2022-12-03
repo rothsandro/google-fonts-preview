@@ -5,6 +5,8 @@ A script to generate preview images for [Google Fonts](https://fonts.google.com)
 The generated preview images are available for download in the [Release section](https://github.com/rothsandro/google-fonts-preview/releases).
 Or follow the instructions below to generate the preview images yourself.
 
+!["List of generated preview images"](./preview.png)
+
 ## Generate images
 
 Clone this repository and run the following commands:
@@ -32,24 +34,24 @@ You can customize the previews by editing the `config.json` file:
 {
   // Text of the preview images.
   // If empty, the font name will be used.
-  "previewText": "",
+  previewText: "",
 
   // The text color of the preview text.
-  "textColor": "#1b1b18",
+  textColor: "#1b1b18",
 
   // The font size of the preview text.
   // Has to be a valid CSS font-size value.
-  "fontSize": "48px",
+  fontSize: "48px",
 
   // The format and file extension of the preview images.
   // Either "png" or "jpeg".
-  "format": "png",
+  format: "png",
 
   // The quality of the preview images (only used for JPEG).
-  "quality": 100,
+  quality: 100,
 
   // If the background should be transparent (only used for PNG).
-  "transparent": true
+  transparent: true,
 }
 ```
 
