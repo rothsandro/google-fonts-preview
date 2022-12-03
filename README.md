@@ -1,6 +1,6 @@
 # Google Font Previews
 
-A script to generate preview images for [Google Fonts](https://fonts.google.com).
+A script to generate preview images of [Google Fonts](https://fonts.google.com).
 
 The generated preview images are available for download in the [Release section](https://github.com/rothsandro/google-fonts-preview/releases).
 Or follow the instructions below to generate the preview images yourself.
